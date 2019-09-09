@@ -1,0 +1,45 @@
+.Card {
+    width: 10rem;
+    height: 15rem;
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 4px;
+    background: #aeaeae;
+    box-shadow: 0 0 5px rgba(0,0,0, .5);
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.Angular {
+    background-image: url('./../../../assets/img/angular.png');
+}
+
+.Vue {
+    background-image: url('./../../../assets/img/vue-dot-js.png');
+}
+
+.Html {
+    background-image: url('./../../../assets/img/html5.png');
+}
+
+.Css {
+    background-image: url('./../../../assets/img/css3.png');
+}
+
+.Js {
+    background-image: url('./../../../assets/img/javascript.png');
+}
+
+.Sass {
+    background-image: url('./../../../assets/img/sass.png');
+}
+
+.React {
+    background-image: url('./../../../assets/img/react.png');
+}
+
+.Ruby {
+    background-image: url('./../../../assets/img/rubygems.png');
+}
