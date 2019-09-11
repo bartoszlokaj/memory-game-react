@@ -2,10 +2,11 @@
     width: 10rem;
     height: 15rem;
     padding: 2rem;
-    margin: 2rem;
+    margin: 1rem;
     border-radius: 4px;
-    background: #aeaeae;
-    box-shadow: 0 0 5px rgba(0,0,0, .5);
+    background: #f7f7f7;
+    box-shadow: 0 0 15px rgba(0,0,0, .7);
+    cursor: pointer;
 
     background-repeat: no-repeat;
     background-position: center;

@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import propTypes from "prop-types";
 
 import classes from "./Card.module.css";
 
@@ -37,8 +37,8 @@ const card = props => {
   return card;
 };
 
-card.PropTypes = {
-  type: PropTypes.string.isRequired
+card.propTypes = {
+  type: propTypes.string.isRequired
 };
 
 export default card;
