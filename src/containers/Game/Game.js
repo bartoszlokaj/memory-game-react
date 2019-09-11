@@ -9,10 +9,14 @@ class Game extends Component {
         cards: ['html','css','angular','vue','react','js','ruby']
     }
 
+    clickHandler = () => {
+      console.log('dupa');
+    }
+
   render() {
     return (
       <Aux>
-        <Board cards={this.state.cards}/>
+        <Board cards={this.state.cards} click={this.clickHandler}/>
         <div>Panel</div>
       </Aux>
     );
