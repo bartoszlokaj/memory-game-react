@@ -10,10 +10,9 @@ const board = props => {
     const pairs = cards.concat(cardsDouble);
 
     pairs.sort((el1, el2) => Math.random() - Math.random());
-    console.log(pairs);
 
     const transformedPairs = pairs.map((el, index) => {
-        return <Card type={el} key={index} click={props.click}/>
+        return <Card type={el} key={index} click={() => props.cardClick(el)} />;
     });
 
     console.log(transformedPairs);
