@@ -12,7 +12,7 @@ const board = props => {
     pairs.sort((el1, el2) => Math.random() - Math.random());
 
     const transformedPairs = pairs.map((el, index) => {
-        return <Card type={el} key={index} click={() => props.cardClick(el)} />;
+        return <Card type={el} key={index} click={() => props.cardClick(el,index)} />;
     });
 
     console.log(transformedPairs);
