@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import Aux from "../../hoc/Auxiliary";
 import Board from '../../components/Board/Board';
 
+let PAIR = [];
+
 class Game extends Component {
 
     state = {
@@ -10,14 +12,20 @@ class Game extends Component {
         score: 0
     }
 
-    removePairHandler = (type) => {
+    cardClickHandler = (type) => {
       console.log(type);
+      PAIR.push(type);
+      console.log(PAIR);
+
+      if(PAIR.length >= 2) {
+        PAIR = [];
+      }
     }
 
   render() {
     return (
       <Aux>
-        <Board cards={this.state.cards} cardClick={this.removePairHandler}/>
+        <Board cards={this.state.cards} cardClick={this.cardClickHandler}/>
         <div>Panel</div>
       </Aux>
     );
