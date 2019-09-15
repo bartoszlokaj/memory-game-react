@@ -39,7 +39,6 @@ class Game extends Component {
     return (
       <Aux>
         <Board cards={this.state.cards} cardClick={this.cardClickHandler} />
-        <div>Panel</div>
       </Aux>
     );
   }
