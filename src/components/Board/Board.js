@@ -1,7 +1,8 @@
 import React from 'react';
 
-import classes from './Board.module.css';
 import Card from './Card/Card';
+import ScorePanel from '../UI/ScorePanel/ScorePanel';
+import classes from './Board.module.css';
 
 const board = props => {
 
@@ -20,6 +21,7 @@ const board = props => {
     return (
         <div className={classes.Board}>
             {transformedPairs}
+            <ScorePanel/>
         </div>
     );
 }
