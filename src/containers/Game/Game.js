@@ -27,7 +27,7 @@ class Game extends Component {
 
     if (PAIR[0] === PAIR[1] && KEYS[0] !== KEYS[1]) {
       let cardsFiltered = CARDS.filter(this.compareCards);
-      // CARDS = cardsFiltered;
+      CARDS = cardsFiltered;
       this.setState({ cards: cardsFiltered });
       console.log(this.state.cards);
     }
@@ -35,7 +35,6 @@ class Game extends Component {
       PAIR = [];
       KEYS = [];
     }
-    console.log(CARDS);
   };
 
   render() {

@@ -1,0 +1,15 @@
+.ScorePanel {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 1rem;
+    background-color: rgba(0,0,0, .6);
+    
+}

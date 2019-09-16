@@ -1,11 +1,13 @@
 .Board {
     width: 100%;
     max-width: 1000px;
-    height: 100%;
-    padding: 1rem;
+    min-height: 90vh;
+    padding: 0 1rem 5rem 1rem;
 
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+
+    position: relative;
 }
