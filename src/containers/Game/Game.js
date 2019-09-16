@@ -8,11 +8,13 @@ let KEYS = [];
 let CARDS = ["html", "css", "angular", "vue", "react", "js", "ruby"];
 let CARDS_COPY = ["html", "css", "angular", "vue", "react", "js", "ruby"];
 
+let SCORE = 0;
+
 class Game extends Component {
   state = {
     grid: CARDS_COPY,
     cards: CARDS,
-    score: 0
+    score: SCORE
   };
   
   compareCards = type => {
@@ -22,14 +24,14 @@ class Game extends Component {
   cardClickHandler = (type, key) => {
     KEYS.push(key);
     PAIR.push(type);
-    console.log(PAIR);
-    console.log(KEYS);
-    console.log(this.state.grid);
-
+    
     if (PAIR[0] === PAIR[1] && KEYS[0] !== KEYS[1]) {
       let cardsFiltered = CARDS.filter(this.compareCards);
+      let scoreUpdated = SCORE + 100;
       CARDS = cardsFiltered;
-      this.setState({ cards: cardsFiltered });
+      SCORE = scoreUpdated;
+
+      this.setState({ cards: cardsFiltered, score: scoreUpdated });
       console.log(this.state.cards);
     }
     if (PAIR.length >= 2 && KEYS.length >= 2) {
@@ -41,7 +43,7 @@ class Game extends Component {
   render() {
     return (
       <Aux>
-        <Board grid={this.state.grid} cards={this.state.cards} cardClick={this.cardClickHandler}/>
+        <Board cards={this.state.cards} cardClick={this.cardClickHandler} score={this.state.score}/>
       </Aux>
     );
   }

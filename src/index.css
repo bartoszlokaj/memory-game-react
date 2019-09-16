@@ -19,10 +19,20 @@ code {
     monospace;
 }
 
+a,
+a:visited,
+a:active {
+  font: inherit;
+  color: #4ebaaa;
+  text-decoration: none;
+  transition: all .2s ease;
+}
+
 /* color-primary: #00897b */
 /* color-primary-light: #4ebaaa */
 /* color-primary-dark: #005b4f */
 
+/* color-gray-light: #f7f7f7 */
 /* color-gray-light: #e0e0e0 */
 /* color-gray-dark: #aeaeae; */
 
