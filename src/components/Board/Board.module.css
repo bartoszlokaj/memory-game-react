@@ -1,8 +1,9 @@
 .Board {
     width: 100%;
     max-width: 1000px;
-    min-height: 90vh;
-    padding: 0 1rem 5rem 1rem;
+    /* min-height: 90vh; */
+    height: scroll;
+    padding: 0 1rem 0 1rem;
 
     display: flex;
     flex-wrap: wrap;

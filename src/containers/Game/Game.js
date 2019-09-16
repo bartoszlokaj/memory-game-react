@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import Aux from "../../hoc/Auxiliary";
 import Board from "../../components/Board/Board";
+import ScorePanel from "../../components/UI/ScorePanel/ScorePanel";
+import classes from "./Game.module.css";
 
 let PAIR = [];
 let KEYS = [];
@@ -16,7 +18,7 @@ class Game extends Component {
     cards: CARDS,
     score: SCORE
   };
-  
+
   compareCards = type => {
     return type !== PAIR[0];
   };
@@ -24,7 +26,7 @@ class Game extends Component {
   cardClickHandler = (type, key) => {
     KEYS.push(key);
     PAIR.push(type);
-    
+
     if (PAIR[0] === PAIR[1] && KEYS[0] !== KEYS[1]) {
       let cardsFiltered = CARDS.filter(this.compareCards);
       let scoreUpdated = SCORE + 100;
@@ -43,7 +45,14 @@ class Game extends Component {
   render() {
     return (
       <Aux>
-        <Board cards={this.state.cards} cardClick={this.cardClickHandler} score={this.state.score}/>
+        <div className={classes.Game}>
+          <Board
+            cards={this.state.cards}
+            cardClick={this.cardClickHandler}
+            
+          />
+          <ScorePanel score={this.state.score}/>
+        </div>
       </Aux>
     );
   }

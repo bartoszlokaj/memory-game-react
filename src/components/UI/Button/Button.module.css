@@ -17,5 +17,6 @@
 }
 
 .NewGame {
+    position: absolute;
     background: transparent;
 }
