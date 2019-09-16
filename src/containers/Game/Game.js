@@ -42,6 +42,12 @@ class Game extends Component {
     }
   };
 
+  newGameHandler = () => {
+    CARDS = CARDS_COPY;
+    SCORE = 0;
+    this.setState({ cards: CARDS, score: SCORE })
+  }
+
   render() {
     return (
       <Aux>
@@ -51,7 +57,7 @@ class Game extends Component {
             cardClick={this.cardClickHandler}
             
           />
-          <ScorePanel score={this.state.score}/>
+          <ScorePanel score={this.state.score} click={this.newGameHandler}/>
         </div>
       </Aux>
     );

@@ -7,7 +7,7 @@ const scorePanel = (props) => {
     return (
         <div className={classes.ScorePanel}>
             <span>Score: {props.score}</span>
-            <Button type={'NewGame'} content={'New Game'}/>
+            <Button type={'NewGame'} content={'New Game'} click={props.click}/>
             <span>Time Left: 1:00</span>
         </div>
     )
