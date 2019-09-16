@@ -16,8 +16,6 @@ const board = props => {
         return <Card type={el} key={index} click={() => props.cardClick(el,index)} />;
     });
 
-    console.log(transformedPairs);
-
     return (
         <div className={classes.Board}>
             {transformedPairs}
