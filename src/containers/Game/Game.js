@@ -18,7 +18,8 @@ class Game extends Component {
   state = {
     grid: CARDS_COPY,
     cards: CARDS,
-    score: SCORE
+    score: SCORE,
+    summary: false
   };
 
   compareCards = type => {
@@ -50,10 +51,14 @@ class Game extends Component {
     this.setState({ cards: CARDS, score: SCORE })
   }
 
+  showSummaryHandler = () => {
+    this.setState({ summary: true })
+  }
+
   render() {
     return (
       <Aux>
-        <Modal>
+        <Modal show={this.state.summary}>
           <ScoreSummary score={this.state.score}/>
         </Modal>
         <div className={classes.Game}>
