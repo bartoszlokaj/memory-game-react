@@ -13,12 +13,14 @@ let CARDS = ["html", "css", "angular", "vue", "react", "js", "ruby"];
 let CARDS_COPY = ["html", "css", "angular", "vue", "react", "js", "ruby"];
 
 let SCORE = 0;
+let ROUND = 1;
 
 class Game extends Component {
   state = {
     grid: CARDS_COPY,
     cards: CARDS,
     score: SCORE,
+    round: ROUND,
     summary: false
   };
 
@@ -50,12 +52,14 @@ class Game extends Component {
   newGameHandler = () => {
     CARDS = CARDS_COPY;
     SCORE = 0;
-    this.setState({ cards: CARDS, score: SCORE })
+    ROUND = 1;
+    this.setState({ cards: CARDS, score: SCORE, round: ROUND })
   }
 
   nextRoundHandler = () => {
     CARDS = CARDS_COPY;
-    this.setState({ cards: CARDS, summary: false })
+    ROUND = ROUND + 1;
+    this.setState({ cards: CARDS, round: ROUND, summary: false })
   }
 
   showSummaryHandler = () => {
@@ -66,7 +70,7 @@ class Game extends Component {
     return (
       <Aux>
         <Modal show={this.state.summary}>
-          <ScoreSummary score={this.state.score} click={this.nextRoundHandler}/>
+          <ScoreSummary score={this.state.score} round={this.state.round} click={this.nextRoundHandler}/>
         </Modal>
         <div className={classes.Game}>
           <Board
