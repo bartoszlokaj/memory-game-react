@@ -15,7 +15,7 @@ const button = props => {
       break;
     default:
       button = (
-        <button className={[classes.Button, classes.NewGame].join(" ")} onClick={props.click}>
+        <button className={classes.Button} onClick={props.click}>
           {props.content}
         </button>
       );

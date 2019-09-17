@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import Aux from "../../hoc/Auxiliary";
 import Board from "../../components/Board/Board";
 import ScorePanel from "../../components/UI/ScorePanel/ScorePanel";
+import Modal from '../../components/UI/Modal/Modal';
+import ScoreSummary from './ScoreSummary/ScoreSummary';
 import classes from "./Game.module.css";
 
 let PAIR = [];
@@ -51,6 +53,9 @@ class Game extends Component {
   render() {
     return (
       <Aux>
+        <Modal>
+          <ScoreSummary score={this.state.score}/>
+        </Modal>
         <div className={classes.Game}>
           <Board
             cards={this.state.cards}
