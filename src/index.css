@@ -6,6 +6,27 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%; 
+  /* 1rem = 10px */
+
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 90em) { 
+  html {
+    font-size: 50%;
+    /* 1rem = 8px */
+  }
+}
+
+@media (max-width: 23.5em) { 
+  html {
+    font-size: 37.5%;
+    /* 1rem = 6px */
+  }
+}
+
 body {
   font-family: 'Lato', sans-serif;
   font-size: 1.8rem;
@@ -56,3 +77,4 @@ a:active {
 @media (min-width: 1440px) {
   
 } */
+
