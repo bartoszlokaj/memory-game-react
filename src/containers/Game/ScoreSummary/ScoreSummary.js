@@ -10,7 +10,7 @@ const scoreSummary = (props) => {
             <h3>So far: {score} points</h3>
             <h4>Keep going, man!</h4>
             <p>Time is valiuable</p>
-            <Button content={'Next round'}/>
+            <Button content={'Next round'} click={props.click}/>
         </Aux>
     );
 };

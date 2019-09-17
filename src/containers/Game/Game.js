@@ -37,11 +37,13 @@ class Game extends Component {
       SCORE = scoreUpdated;
 
       this.setState({ cards: cardsFiltered, score: scoreUpdated });
-      console.log(this.state.cards);
     }
     if (PAIR.length >= 2 && KEYS.length >= 2) {
       PAIR = [];
       KEYS = [];
+    }
+    if(CARDS.length === 0) {
+      this.showSummaryHandler();
     }
   };
 
@@ -49,6 +51,11 @@ class Game extends Component {
     CARDS = CARDS_COPY;
     SCORE = 0;
     this.setState({ cards: CARDS, score: SCORE })
+  }
+
+  nextRoundHandler = () => {
+    CARDS = CARDS_COPY;
+    this.setState({ cards: CARDS, summary: false })
   }
 
   showSummaryHandler = () => {
@@ -59,7 +66,7 @@ class Game extends Component {
     return (
       <Aux>
         <Modal show={this.state.summary}>
-          <ScoreSummary score={this.state.score}/>
+          <ScoreSummary score={this.state.score} click={this.nextRoundHandler}/>
         </Modal>
         <div className={classes.Game}>
           <Board
