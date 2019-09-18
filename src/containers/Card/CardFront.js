@@ -10,64 +10,106 @@ const card = props => {
     case "angular":
       card = (
         <div
-          className={[classes.Angular, classes.CardFront, classes.CardSide].join(" ")}
+          className={[
+            classes.Angular,
+            classes.CardFront,
+            classes.CardSide
+          ].join(" ")}
           onClick={props.click}
+          style={{
+            transform: props.rotated ? "rotateY(0deg)" : "rotateY(-180deg)"
+          }}
         ></div>
       );
       break;
     case "vue":
       card = (
         <div
-          className={[classes.Vue, classes.CardFront, classes.CardSide].join(" ")}
+          className={[classes.Vue, classes.CardFront, classes.CardSide].join(
+            " "
+          )}
           onClick={props.click}
+          style={{
+            transform: props.rotated ? "rotateY(0deg)" : "rotateY(-180deg)"
+          }}
         ></div>
       );
       break;
     case "html":
       card = (
         <div
-          className={[classes.Html, classes.CardFront, classes.CardSide].join(" ")}
+          className={[classes.Html, classes.CardFront, classes.CardSide].join(
+            " "
+          )}
           onClick={props.click}
+          style={{
+            transform: props.rotated ? "rotateY(0deg)" : "rotateY(-180deg)"
+          }}
         ></div>
       );
       break;
     case "css":
       card = (
         <div
-          className={[classes.Css, classes.CardFront, classes.CardSide].join(" ")}
+          className={[classes.Css, classes.CardFront, classes.CardSide].join(
+            " "
+          )}
           onClick={props.click}
+          style={{
+            transform: props.rotated ? "rotateY(0deg)" : "rotateY(-180deg)"
+          }}
         ></div>
       );
       break;
     case "js":
       card = (
         <div
-          className={[classes.Js, classes.CardFront, classes.CardSide].join(" ")}
+          className={[classes.Js, classes.CardFront, classes.CardSide].join(
+            " "
+          )}
           onClick={props.click}
+          style={{
+            transform: props.rotated ? "rotateY(0deg)" : "rotateY(-180deg)"
+          }}
         ></div>
       );
       break;
     case "react":
       card = (
         <div
-          className={[classes.React, classes.CardFront, classes.CardSide].join(" ")}
+          className={[classes.React, classes.CardFront, classes.CardSide].join(
+            " "
+          )}
           onClick={props.click}
+          style={{
+            transform: props.rotated ? "rotateY(0deg)" : "rotateY(-180deg)"
+          }}
         ></div>
       );
       break;
     case "ruby":
       card = (
         <div
-          className={[classes.Ruby, classes.CardFront, classes.CardSide].join(" ")}
+          className={[classes.Ruby, classes.CardFront, classes.CardSide].join(
+            " "
+          )}
           onClick={props.click}
+          style={{
+            transform: props.rotated ? "rotateY(0deg)" : "rotateY(-180deg)"
+          }}
         ></div>
       );
       break;
     case "sass":
       card = (
         <div
-          className={[classes.Sass, classes.CardFront, classes.CardSide].join(" ")}
+          className={[classes.Sass, classes.CardFront, classes.CardSide].join(
+            " "
+          )}
           onClick={props.click}
+          style={{
+            transform: props.rotated ? "rotateY(0deg)" : "rotateY(-180deg)"
+          }}
         ></div>
       );
       break;

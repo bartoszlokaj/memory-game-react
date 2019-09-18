@@ -11,14 +11,15 @@ class Card extends Component {
   }
 
   rotateCardHandler = () => {
+    this.setState({ rotated: true });
     console.log('dupa');
   }
 
   render(){
-    return(
+    return (
       <div className={classes.Card} onClick={this.props.click}>
-        <CardFront type={this.props.type}/>
-        <CardBack click={this.rotateCardHandler}/>
+        <CardFront type={this.props.type} rotated={this.state.rotated} />
+        <CardBack click={this.rotateCardHandler} rotated={this.state.rotated} />
       </div>
     );
   }
