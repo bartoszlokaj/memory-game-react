@@ -1,8 +1,12 @@
-.Content {
-    min-height: 100vh;
+.Game{
+    position: relative;
+
+    width: 100%;
+    margin-bottom: 2.5rem;
 
     display: flex;
     justify-content: center;
     align-items: center;
     flex-flow: column;
+    flex-grow: 1;
 }

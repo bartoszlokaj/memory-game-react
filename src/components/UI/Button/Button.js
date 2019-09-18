@@ -8,14 +8,14 @@ const button = props => {
   switch (props.type) {
     case "NewGame":
       button = (
-        <button className={[classes.Button, classes.NewGame].join(" ")}>
+        <button className={[classes.Button, classes.NewGame].join(" ")} onClick={props.click}>
           {props.content}
         </button>
       );
       break;
     default:
       button = (
-        <button className={[classes.Button, classes.NewGame].join(" ")}>
+        <button className={classes.Button} onClick={props.click}>
           {props.content}
         </button>
       );

@@ -1,15 +1,15 @@
 .Card {
-    width: 8rem;
-    height: 12rem;
-    padding: 2rem;
+    width: 11rem;
+    height: 15rem;
     margin: 1rem;
     border-radius: 4px;
     background: #f7f7f7;
-    box-shadow: 0 0 15px rgba(0,0,0, .7);
+    box-shadow: 0 0 1.5rem rgba(0,0,0, .7);
     cursor: pointer;
 
     background-repeat: no-repeat;
     background-position: center;
+    background-size: contain;
 }
 
 .Angular {

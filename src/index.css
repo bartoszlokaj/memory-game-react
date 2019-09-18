@@ -6,6 +6,27 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%; 
+  /* 1rem = 10px */
+
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 90em) { 
+  html {
+    font-size: 50%;
+    /* 1rem = 8px */
+  }
+}
+
+@media (max-width: 23.5em) { 
+  html {
+    font-size: 37.5%;
+    /* 1rem = 6px */
+  }
+}
+
 body {
   font-family: 'Lato', sans-serif;
   font-size: 1.8rem;
@@ -19,10 +40,20 @@ code {
     monospace;
 }
 
+a,
+a:visited,
+a:active {
+  font: inherit;
+  color: #4ebaaa;
+  text-decoration: none;
+  transition: all .2s ease;
+}
+
 /* color-primary: #00897b */
 /* color-primary-light: #4ebaaa */
 /* color-primary-dark: #005b4f */
 
+/* color-gray-light: #f7f7f7 */
 /* color-gray-light: #e0e0e0 */
 /* color-gray-dark: #aeaeae; */
 
@@ -46,3 +77,4 @@ code {
 @media (min-width: 1440px) {
   
 } */
+
