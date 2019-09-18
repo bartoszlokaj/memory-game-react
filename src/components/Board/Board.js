@@ -1,6 +1,6 @@
 import React from "react";
 
-import Card from "./Card/Card";
+import Card from "../../containers/Card/Card";
 import classes from "./Board.module.css";
 
 const board = props => {
