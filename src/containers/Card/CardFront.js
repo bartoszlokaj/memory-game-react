@@ -1,7 +1,7 @@
 import React from "react";
 import propTypes from "prop-types";
 
-import classes from "./CardFront.module.css";
+import classes from "./Card.module.css";
 
 const card = props => {
   let card = null;
@@ -10,7 +10,7 @@ const card = props => {
     case "angular":
       card = (
         <div
-          className={[classes.Angular, classes.CardFront].join(" ")}
+          className={[classes.Angular, classes.CardFront, classes.CardSide].join(" ")}
           onClick={props.click}
         ></div>
       );
@@ -18,7 +18,7 @@ const card = props => {
     case "vue":
       card = (
         <div
-          className={[classes.Vue, classes.CardFront].join(" ")}
+          className={[classes.Vue, classes.CardFront, classes.CardSide].join(" ")}
           onClick={props.click}
         ></div>
       );
@@ -26,7 +26,7 @@ const card = props => {
     case "html":
       card = (
         <div
-          className={[classes.Html, classes.CardFront].join(" ")}
+          className={[classes.Html, classes.CardFront, classes.CardSide].join(" ")}
           onClick={props.click}
         ></div>
       );
@@ -34,7 +34,7 @@ const card = props => {
     case "css":
       card = (
         <div
-          className={[classes.Css, classes.CardFront].join(" ")}
+          className={[classes.Css, classes.CardFront, classes.CardSide].join(" ")}
           onClick={props.click}
         ></div>
       );
@@ -42,7 +42,7 @@ const card = props => {
     case "js":
       card = (
         <div
-          className={[classes.Js, classes.CardFront].join(" ")}
+          className={[classes.Js, classes.CardFront, classes.CardSide].join(" ")}
           onClick={props.click}
         ></div>
       );
@@ -50,7 +50,7 @@ const card = props => {
     case "react":
       card = (
         <div
-          className={[classes.React, classes.CardFront].join(" ")}
+          className={[classes.React, classes.CardFront, classes.CardSide].join(" ")}
           onClick={props.click}
         ></div>
       );
@@ -58,7 +58,7 @@ const card = props => {
     case "ruby":
       card = (
         <div
-          className={[classes.Ruby, classes.CardFront].join(" ")}
+          className={[classes.Ruby, classes.CardFront, classes.CardSide].join(" ")}
           onClick={props.click}
         ></div>
       );
@@ -66,7 +66,7 @@ const card = props => {
     case "sass":
       card = (
         <div
-          className={[classes.Sass, classes.CardFront].join(" ")}
+          className={[classes.Sass, classes.CardFront, classes.CardSide].join(" ")}
           onClick={props.click}
         ></div>
       );
