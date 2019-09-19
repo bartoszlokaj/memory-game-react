@@ -19,6 +19,7 @@ class Game extends Component {
     newGame: false,
     cards: DECK,
     coverCards: false,
+    isPair: 0,
     score: SCORE,
     round: ROUND,
     summary: false,
@@ -32,6 +33,7 @@ class Game extends Component {
     this.setState({ coverCards: false })
     KEYS.push(key);
     PAIR.push(type);
+    console.log(KEYS,PAIR)
 
     if (PAIR[0] === PAIR[1] && KEYS[0] !== KEYS[1]) {
       let cardsFiltered = DECK.filter(this.compareCards);

@@ -4,10 +4,16 @@ import CardFront from "./CardFront";
 import CardBack from "./CardBack";
 import classes from "./Card.module.css";
 
+const STYLE = {
+  transform: 'translateY(-100vh) scale(2)',
+  opacity: '0',
+}
+
 class Card extends Component {
   state = {
     rotatedFront: false,
-    paired: false
+    paired: false,
+    animate: false
   };
 
 
@@ -21,7 +27,9 @@ class Card extends Component {
 
   render() {
     return (
-      <div className={classes.Card} onClick={this.props.click}>
+      <div className={classes.Card} onClick={this.props.click} style={
+        this.state.animate ? STYLE : null
+      }>
         <CardFront
           type={this.props.type}
           click={this.rotateToBackHandler}
