@@ -18,10 +18,12 @@ let ROUND = 1;
 class Game extends Component {
   state = {
     grid: CARDS_COPY,
+    gameStart: true,
     cards: CARDS,
     score: SCORE,
     round: ROUND,
-    summary: false
+    summary: false,
+    shuffle: false,
   };
 
   compareCards = type => {
@@ -29,6 +31,7 @@ class Game extends Component {
   };
 
   cardClickHandler = (type, key) => {
+    this.setState({ gameStart: false })
     KEYS.push(key);
     PAIR.push(type);
 
@@ -53,13 +56,13 @@ class Game extends Component {
     CARDS = CARDS_COPY;
     SCORE = 0;
     ROUND = 1;
-    this.setState({ cards: CARDS, score: SCORE, round: ROUND })
+    this.setState({ cards: CARDS, score: SCORE, round: ROUND, shuffle: true })
   }
 
   nextRoundHandler = () => {
     CARDS = CARDS_COPY;
     ROUND = ROUND + 1;
-    this.setState({ cards: CARDS, round: ROUND, summary: false })
+    this.setState({ cards: CARDS, round: ROUND, summary: false, shuffle: true })
   }
 
   showSummaryHandler = () => {
@@ -74,9 +77,10 @@ class Game extends Component {
         </Modal>
         <div className={classes.Game}>
           <Board
+            gameStart={this.state.gameStart}
             cards={this.state.cards}
             cardClick={this.cardClickHandler}
-            
+            shuffle={this.state.shuffle}
           />
           <ScorePanel score={this.state.score} click={this.newGameHandler}/>
         </div>

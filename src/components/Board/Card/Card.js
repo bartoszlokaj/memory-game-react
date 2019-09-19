@@ -12,6 +12,7 @@ const card = props => {
         <div
           className={[classes.Angular, classes.Card].join(" ")}
           onClick={props.click}
+          style={{transform: props.isPair ? 'translateY(-100vh)' : null}}
         ></div>
       );
       break;

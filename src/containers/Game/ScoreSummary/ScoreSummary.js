@@ -7,7 +7,7 @@ const scoreSummary = (props) => {
     const score = props.score;
     return (
         <Aux>
-            <h2>So far: {score} points</h2>
+            <h2>So far: <strong>{score}</strong> points</h2>
             <h4>After {props.round} round</h4>
             <h4>Keep going, man!</h4>
             <p>Time is valiuable</p>
