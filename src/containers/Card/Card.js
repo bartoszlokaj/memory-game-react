@@ -1,33 +1,39 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import CardFront from './CardFront';
-import CardBack from './CardBack';
-import classes from './Card.module.css';
+import CardFront from "./CardFront";
+import CardBack from "./CardBack";
+import classes from "./Card.module.css";
 
 class Card extends Component {
   state = {
-    rotated: false,
+    rotatedFront: false,
     paired: false
-  }
+  };
 
-  rotateCardHandler = () => {
-    // if(this.props.newGame === true) {
-    //   this.setState({ rotated:false })
-    // }
-    // this.setState({ rotated: true });
 
-    this.setState({ rotated: true });
-    console.log('dupa');
-  }
+  rotateToFrontHandler = () => {
+    this.setState({ rotatedFront: true });
+  };
 
-  render(){
+  rotateToBackHandler = () => {
+    this.setState({ rotatedFront: false });
+  };
+
+  render() {
     return (
       <div className={classes.Card} onClick={this.props.click}>
-        <CardFront type={this.props.type} rotated={this.state.rotated} />
-        <CardBack click={this.rotateCardHandler} rotated={this.state.rotated} />
+        <CardFront
+          type={this.props.type}
+          click={this.rotateToBackHandler}
+          rotatedFront={this.state.rotatedFront}
+        />
+        <CardBack
+          click={this.rotateToFrontHandler}
+          rotatedFront={this.state.rotatedFront}
+        />
       </div>
     );
   }
-};
+}
 
 export default Card;

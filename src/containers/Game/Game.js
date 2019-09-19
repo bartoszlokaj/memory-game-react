@@ -18,6 +18,7 @@ class Game extends Component {
   state = {
     newGame: false,
     cards: DECK,
+    coverCards: false,
     score: SCORE,
     round: ROUND,
     summary: false,
@@ -28,7 +29,7 @@ class Game extends Component {
   };
 
   cardClickHandler = (type, key) => {
-    this.setState({ gameStart: false })
+    this.setState({ coverCards: false })
     KEYS.push(key);
     PAIR.push(type);
 
@@ -43,6 +44,8 @@ class Game extends Component {
     if (PAIR.length >= 2 && KEYS.length >= 2) {
       PAIR = [];
       KEYS = [];
+
+      this.setState({ coverCards: true })
     }
     if(DECK.length === 0) {
       this.showSummaryHandler();
@@ -57,9 +60,9 @@ class Game extends Component {
   }
 
   nextRoundHandler = () => {
-    CARDS = DECK;
+    DECK = [...CARDS].map(el => el).concat(CARDS).sort((el1, el2) => Math.random() - Math.random());
     ROUND = ROUND + 1;
-    this.setState({ cards: CARDS, round: ROUND, summary: false })
+    this.setState({ cards: DECK, round: ROUND, summary: false })
   }
 
   showSummaryHandler = () => {
@@ -77,6 +80,7 @@ class Game extends Component {
             newGame={this.state.newGame}
             cards={this.state.cards}
             cardClick={this.cardClickHandler}
+            cover={this.state.coverCards}
           />
           <ScorePanel score={this.state.score} click={this.newGameHandler}/>
         </div>

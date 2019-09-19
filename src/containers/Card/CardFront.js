@@ -17,7 +17,7 @@ const card = props => {
           ].join(" ")}
           onClick={props.click}
           style={{
-            transform: props.rotated ? "rotateY(0deg)" : "rotateY(-180deg)"
+            transform: props.rotatedFront ? "rotateY(0deg)" : "rotateY(-180deg)"
           }}
         ></div>
       );
@@ -30,7 +30,7 @@ const card = props => {
           )}
           onClick={props.click}
           style={{
-            transform: props.rotated ? "rotateY(0deg)" : "rotateY(-180deg)"
+            transform: props.rotatedFront ? "rotateY(0deg)" : "rotateY(-180deg)"
           }}
         ></div>
       );
@@ -43,7 +43,7 @@ const card = props => {
           )}
           onClick={props.click}
           style={{
-            transform: props.rotated ? "rotateY(0deg)" : "rotateY(-180deg)"
+            transform: props.rotatedFront ? "rotateY(0deg)" : "rotateY(-180deg)"
           }}
         ></div>
       );
@@ -56,7 +56,7 @@ const card = props => {
           )}
           onClick={props.click}
           style={{
-            transform: props.rotated ? "rotateY(0deg)" : "rotateY(-180deg)"
+            transform: props.rotatedFront ? "rotateY(0deg)" : "rotateY(-180deg)"
           }}
         ></div>
       );
@@ -69,7 +69,7 @@ const card = props => {
           )}
           onClick={props.click}
           style={{
-            transform: props.rotated ? "rotateY(0deg)" : "rotateY(-180deg)"
+            transform: props.rotatedFront ? "rotateY(0deg)" : "rotateY(-180deg)"
           }}
         ></div>
       );
@@ -82,7 +82,7 @@ const card = props => {
           )}
           onClick={props.click}
           style={{
-            transform: props.rotated ? "rotateY(0deg)" : "rotateY(-180deg)"
+            transform: props.rotatedFront ? "rotateY(0deg)" : "rotateY(-180deg)"
           }}
         ></div>
       );
@@ -95,7 +95,7 @@ const card = props => {
           )}
           onClick={props.click}
           style={{
-            transform: props.rotated ? "rotateY(0deg)" : "rotateY(-180deg)"
+            transform: props.rotatedFront ? "rotateY(0deg)" : "rotateY(-180deg)"
           }}
         ></div>
       );
@@ -108,7 +108,7 @@ const card = props => {
           )}
           onClick={props.click}
           style={{
-            transform: props.rotated ? "rotateY(0deg)" : "rotateY(-180deg)"
+            transform: props.rotatedFront ? "rotateY(0deg)" : "rotateY(-180deg)"
           }}
         ></div>
       );

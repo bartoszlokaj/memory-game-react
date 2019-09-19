@@ -7,8 +7,9 @@ const cardBack = props => {
     <div
       className={[classes.CardSide, classes.CardBack].join(" ")}
       onClick={props.click}
-      style={{transform: props.rotated ? 'rotateY(-180deg)' : 'rotateY(0deg)'}}
-    ></div>
+      style={{
+        transform: props.rotatedFront ? "rotateY(-180deg)" : "rotateY(0deg)"
+      }}></div>
   );
 };
 
