@@ -4,7 +4,6 @@ import Card from "../../containers/Card/Card";
 import classes from "./Board.module.css";
 
 const board = props => {
-  console.log(props.cards)
   const cards = [...props.cards];
 
   const transformedCards = cards.map((el, index) => {
@@ -13,6 +12,7 @@ const board = props => {
         key={index}
         type={el}
         click={() => props.cardClick(el, index)}
+        newGame={props.newGame}
       />
     );
   });

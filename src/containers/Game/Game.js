@@ -50,16 +50,10 @@ class Game extends Component {
   };
 
   newGameHandler = () => {
-    this.newDeckHandler(CARDS);
-    CARDS = DECK;
+    DECK = [...CARDS].map(el => el).concat(CARDS).sort((el1, el2) => Math.random() - Math.random());
     SCORE = 0;
     ROUND = 1;
-    this.setState({ cards: CARDS, score: SCORE, round: ROUND })
-  }
-
-  newDeckHandler = (deck) => {
-    const newDeck = [...deck].map(el => el).concat(deck).sort((el1, el2) => Math.random() - Math.random());
-    console.log(newDeck);
+    this.setState({ score: SCORE, round: ROUND, cards: DECK, newGame: true })
   }
 
   nextRoundHandler = () => {

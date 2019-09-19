@@ -11,6 +11,11 @@ class Card extends Component {
   }
 
   rotateCardHandler = () => {
+    // if(this.props.newGame === true) {
+    //   this.setState({ rotated:false })
+    // }
+    // this.setState({ rotated: true });
+
     this.setState({ rotated: true });
     console.log('dupa');
   }
