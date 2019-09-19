@@ -1,0 +1,84 @@
+.Card {
+  position: relative;
+  perspective: 150rem;
+
+  width: 11rem;
+  height: 15rem;
+  margin: 1rem;
+
+  cursor: pointer;
+}
+
+.CardSide {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  backface-visibility: hidden;
+  overflow: hidden;
+
+  background: #f7f7f7;
+  border-radius: 4px;
+  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.7);
+
+  transition: all 0.3s ease-in-out;
+}
+
+/* .Card:hover .CardFront{
+  
+  transform: rotateY(0deg);
+}
+
+.Card:hover .CardBack{
+  transform: rotateY(-180deg);
+} */
+
+.CardBack {
+  color: #333;
+  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.7);
+  backface-visibility: hidden;
+}
+
+.CardFront {
+  backface-visibility: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  transform: rotateY(-180deg);
+}
+
+.Angular {
+  background-image: url("../../assets/img/angular.png");
+}
+
+.Vue {
+  background-image: url("../../assets/img/vue-dot-js.png");
+}
+
+.Html {
+  background-image: url("../../assets/img/html5.png");
+}
+
+.Css {
+  background-image: url("../../assets/img/css3.png");
+}
+
+.Js {
+  background-image: url("../../assets/img/javascript.png");
+}
+
+.Sass {
+  background-image: url("../../assets/img/sass.png");
+}
+
+.React {
+  background-image: url("../../assets/img/react.png");
+}
+
+.Ruby {
+  background-image: url("../../assets/img/rubygems.png");
+}
