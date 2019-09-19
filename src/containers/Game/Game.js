@@ -10,20 +10,17 @@ import classes from "./Game.module.css";
 let PAIR = [];
 let KEYS = [];
 let CARDS = ["html", "css", "angular", "vue", "react", "js", "ruby"];
-let CARDS_COPY = ["html", "css", "angular", "vue", "react", "js", "ruby"];
-
+let DECK = [...CARDS].map(el => el).concat(CARDS).sort((el1, el2) => Math.random() - Math.random());
 let SCORE = 0;
 let ROUND = 1;
 
 class Game extends Component {
   state = {
-    grid: CARDS_COPY,
-    gameStart: true,
-    cards: CARDS,
+    newGame: false,
+    cards: DECK,
     score: SCORE,
     round: ROUND,
     summary: false,
-    shuffle: false,
   };
 
   compareCards = type => {
@@ -36,9 +33,9 @@ class Game extends Component {
     PAIR.push(type);
 
     if (PAIR[0] === PAIR[1] && KEYS[0] !== KEYS[1]) {
-      let cardsFiltered = CARDS.filter(this.compareCards);
+      let cardsFiltered = DECK.filter(this.compareCards);
       let scoreUpdated = SCORE + 100;
-      CARDS = cardsFiltered;
+      DECK = cardsFiltered;
       SCORE = scoreUpdated;
 
       this.setState({ cards: cardsFiltered, score: scoreUpdated });
@@ -47,22 +44,28 @@ class Game extends Component {
       PAIR = [];
       KEYS = [];
     }
-    if(CARDS.length === 0) {
+    if(DECK.length === 0) {
       this.showSummaryHandler();
     }
   };
 
   newGameHandler = () => {
-    CARDS = CARDS_COPY;
+    this.newDeckHandler(CARDS);
+    CARDS = DECK;
     SCORE = 0;
     ROUND = 1;
-    this.setState({ cards: CARDS, score: SCORE, round: ROUND, shuffle: true })
+    this.setState({ cards: CARDS, score: SCORE, round: ROUND })
+  }
+
+  newDeckHandler = (deck) => {
+    const newDeck = [...deck].map(el => el).concat(deck).sort((el1, el2) => Math.random() - Math.random());
+    console.log(newDeck);
   }
 
   nextRoundHandler = () => {
-    CARDS = CARDS_COPY;
+    CARDS = DECK;
     ROUND = ROUND + 1;
-    this.setState({ cards: CARDS, round: ROUND, summary: false, shuffle: true })
+    this.setState({ cards: CARDS, round: ROUND, summary: false })
   }
 
   showSummaryHandler = () => {
@@ -77,10 +80,9 @@ class Game extends Component {
         </Modal>
         <div className={classes.Game}>
           <Board
-            gameStart={this.state.gameStart}
+            newGame={this.state.newGame}
             cards={this.state.cards}
             cardClick={this.cardClickHandler}
-            shuffle={this.state.shuffle}
           />
           <ScorePanel score={this.state.score} click={this.newGameHandler}/>
         </div>
