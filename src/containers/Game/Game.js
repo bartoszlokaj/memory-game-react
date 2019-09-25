@@ -16,7 +16,7 @@ let SCORE = 0;
 let ROUND = 0;
 let oneVisible = false;
 let visible_nr;
-let lock = false;
+let LOCK = false;
 let pairsLeft = CARDS.length;
 
 class Game extends Component {
@@ -29,8 +29,8 @@ class Game extends Component {
 
   cardClickHandler = (type, key) => {
     console.log(DECK[key]);
-    if (lock == false) {
-      lock = true;
+    if (LOCK == false) {
+      LOCK = true;
 
       let image = `url("./img/${type}.png")`;
       let card = document.querySelector(`#c${key}`);
@@ -41,7 +41,7 @@ class Game extends Component {
         //first card
         oneVisible = true;
         visible_nr = key;
-        lock = false;
+        LOCK = false;
       } else {
         //second card
         if (DECK[visible_nr] === DECK[key] && visible_nr !== key) {
@@ -78,17 +78,17 @@ class Game extends Component {
       this.showSummaryHandler();
     }
 
-    lock = false;
+    LOCK = false;
   };
 
   backToBackHandler = (c1, c2) => {
     console.log("pudło");
     let card = document.querySelector(`#c${c1}`);
     let secondCard = document.querySelector(`#c${c2}`);
-    card.style.backgroundImage = "url(./img/angular.png)";
-    secondCard.style.backgroundImage = "url(./img/angular.png)";
+    card.style.backgroundImage = "url(./img/star.png)";
+    secondCard.style.backgroundImage = "url(./img/star.png)";
 
-    lock = false;
+    LOCK = false;
   };
 
   backToBoardHandler = () => {
@@ -97,7 +97,7 @@ class Game extends Component {
     cardsAr.forEach(div => {
       div.style.opacity = "1";
       div.style.transform = "translateY(0) scale(1)";
-      div.style.backgroundImage = "url(./img/angular.png)";
+      div.style.backgroundImage = "url(./img/star.png)";
     })
     console.log(cardsAr);
   }

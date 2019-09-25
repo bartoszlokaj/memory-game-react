@@ -7,7 +7,7 @@
   margin: 1rem;
 
   
-  background-image: url('../../assets/img/angular.png');
+  background-image: url('../../assets/img/star.png');
   border-radius: 4px;
   box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.7);
   
@@ -18,28 +18,6 @@
 
   transition: all .4s ease-in-out;
   /* animation: CardsOf .4s 2s ease-in-out forwards; */
-}
-
-.CardActive {
-  position: relative;
-  perspective: 150rem;
-
-  width: 11rem;
-  height: 15rem;
-  margin: 1rem;
-
-  
-  background: #f7f7f7;
-  border-radius: 4px;
-  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.7);
-  
-  cursor: pointer;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-
-  transition: all .4s ease-in-out;
-  border: 2px solid red;
 }
 
 .CardSide {
