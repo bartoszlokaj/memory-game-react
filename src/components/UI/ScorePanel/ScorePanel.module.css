@@ -15,14 +15,15 @@
 
 .Round {
     position: fixed;
-    bottom: 5rem;
-    right: 5rem;
+    top: 6rem;
+    right: 6rem;
 
     display: flex;
     justify-content: center;
+    align-items: center;
 
-    width: 6rem;
-    height: 6rem;
+    width: 7rem;
+    height: 7rem;
     
     border-radius: 50%;
     background: #333;

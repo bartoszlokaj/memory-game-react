@@ -13,8 +13,6 @@ const board = props => {
         id={'c' + index}
         type={el}
         click={() => props.cardClick(el, index)}
-        newGame={props.newGame}
-        cover={props.cover}
       />
     );
   });
