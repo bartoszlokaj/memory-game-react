@@ -2,13 +2,13 @@
     font:inherit;
     font-size: 3rem;
     letter-spacing: 1px;
-    color: #f7f7f7;
+    color: #444;
     padding: 3px 7px;
     margin: 1rem;
     margin-top: 2rem;
-    background-color: #444;
+    background-color: #f7f7f7;
     cursor: pointer;
-    border: 2px solid #f7f7f7;
+    border: 2px solid #444;
     border-radius: 4px;
     outline: none;
     transition: all .2s ease;
@@ -17,13 +17,23 @@
 .Button:hover,
 .Button:active {
     box-shadow: 0 0 4px rgba(0,0,0, .7);
-    background-color: #f7f7f7;
-    color: rgba(0,0,0, .6)
+    background-color: #444;
+    color: #f7f7f7;
 }
 
 .NewGame {
     font-size: 2rem;
     position: absolute;
-    background: transparent;
     margin: 0;
+    
+    border: 2px solid #f7f7f7;
+    background: transparent;
+    color: #f7f7f7;
+}
+
+.NewGame:hover,
+.NewGame:active {
+    box-shadow: 0 0 4px rgba(0,0,0, .7);
+    background-color: #f7f7f7;
+    color: rgba(0,0,0, .6)
 }

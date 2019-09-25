@@ -59,16 +59,29 @@
   transform: rotateY(-180deg);
 }
 
-@keyframes CardsOf {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
+@media (max-width: 90em) { 
+  .Card,
+  .CardSide {
+    /* 1rem = 8px */
+    width: 10rem;
+    height: 14rem;
   }
-  100% {
-    transform: translateY(-100vh) scale(2);
-    margin: 5rem;
-    box-shadow: 0 0 3rem rgba(0,0,0, .3);
-    opacity: 0;
+}
+
+@media (max-width: 23.5em) { 
+  .Card,
+  .CardSide {
+    /* 1rem = 6px */
+    width: 10rem;
+    height: 14rem;
+  }
+}
+
+@media (max-height: 375px) and (orientation: landscape) {
+  .CardSide,
+  .Card {
+    width: 7rem;
+    height: 10rem;
   }
 }
 /* 
