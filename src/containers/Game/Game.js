@@ -7,8 +7,6 @@ import Modal from "../../components/UI/Modal/Modal";
 import ScoreSummary from "./ScoreSummary/ScoreSummary";
 import classes from "./Game.module.css";
 
-let PAIR = [];
-let KEYS = [];
 let CARDS = ["html", "css", "angular", "vue", "react", "js", "ruby"];
 let DECK = [...CARDS]
   .map(el => el)
@@ -19,22 +17,14 @@ let ROUND = 0;
 let oneVisible = false;
 let visible_nr;
 let lock = false;
-let pairsLeft = CARDS.length
-console.log(pairsLeft);
+let pairsLeft = CARDS.length;
 
 class Game extends Component {
   state = {
-    newGame: false,
     cards: DECK,
-    coverCards: false,
-    isPair: 0,
     score: SCORE,
     round: ROUND,
     summary: false
-  };
-
-  compareCards = type => {
-    return type !== PAIR[0];
   };
 
   cardClickHandler = (type, key) => {
@@ -77,13 +67,15 @@ class Game extends Component {
     console.log("para");
     let card = document.querySelector(`#c${c1}`);
     let secondCard = document.querySelector(`#c${c2}`);
-    card.style.transform = "translateY(-100vh)";
-    secondCard.style.transform = "translateY(-100vh)";
+    card.style.transform = "translateY(-100vh) scale(1.7)";
+    card.style.opacity = "0";
+    secondCard.style.transform = "translateY(-100vh) scale(1.7)";
+    secondCard.style.opacity = "0";
 
     pairsLeft--;
 
-    if(pairsLeft === 0) {
-      this.setState({ summary: true });
+    if (pairsLeft === 0) {
+      this.showSummaryHandler();
     }
 
     lock = false;
@@ -99,6 +91,17 @@ class Game extends Component {
     lock = false;
   };
 
+  backToBoardHandler = () => {
+    let cards = document.querySelectorAll('div[class*="Card"]');
+    let cardsAr = Array.from(cards);
+    cardsAr.forEach(div => {
+      div.style.opacity = "1";
+      div.style.transform = "translateY(0) scale(1)";
+      div.style.backgroundImage = "url(./img/angular.png)";
+    })
+    console.log(cardsAr);
+  }
+
   newGameHandler = () => {
     DECK = [...CARDS]
       .map(el => el)
@@ -106,7 +109,7 @@ class Game extends Component {
       .sort((el1, el2) => Math.random() - Math.random());
     SCORE = 0;
     ROUND = 1;
-    this.setState({ score: SCORE, round: ROUND, cards: DECK, newGame: true });
+    this.setState({ score: SCORE, round: ROUND, cards: DECK });
   };
 
   nextRoundHandler = () => {
@@ -114,8 +117,12 @@ class Game extends Component {
       .map(el => el)
       .concat(CARDS)
       .sort((el1, el2) => Math.random() - Math.random());
-    ROUND = ROUND + 1;
-    this.setState({ cards: DECK, round: ROUND, summary: false });
+    let updatedDeck = DECK;
+    ROUND++;
+    let updatedRound = ROUND;
+    this.backToBoardHandler();
+    console.log(DECK);
+    this.setState({ cards: updatedDeck, round: updatedRound, summary: false });
   };
 
   showSummaryHandler = () => {
@@ -133,12 +140,7 @@ class Game extends Component {
           />
         </Modal>
         <div className={classes.Game}>
-          <Board
-            newGame={this.state.newGame}
-            cards={this.state.cards}
-            cardClick={this.cardClickHandler}
-            cover={this.state.coverCards}
-          />
+          <Board cards={this.state.cards} cardClick={this.cardClickHandler} />
           <ScorePanel
             score={this.state.score}
             click={this.newGameHandler}
