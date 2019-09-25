@@ -13,38 +13,36 @@ let DECK = [...CARDS]
   .concat(CARDS)
   .sort((el1, el2) => Math.random() - Math.random());
 let SCORE = 0;
-let ROUND = 0;
-let oneVisible = false;
-let visible_nr;
+let TURN = 0;
+let FIRS_CARD_UP = false;
 let LOCK = false;
+let visible_nr;
 let pairsLeft = CARDS.length;
 
 class Game extends Component {
   state = {
     cards: DECK,
     score: SCORE,
-    round: ROUND,
+    turn: TURN,
     summary: false
   };
 
   cardClickHandler = (type, key) => {
-    console.log(DECK[key]);
+
     if (LOCK == false) {
       LOCK = true;
 
       let image = `url("./img/${type}.png")`;
-      let card = document.querySelector(`#c${key}`);
       let cardBack = document.querySelector(`#c${key} div:nth-child(2)`);
       let cardFront = document.querySelector(`#c${key} div:first-child`);
-      console.log(cardBack, cardFront, card);
 
       cardBack.style.transform = 'rotateY(-180deg)';
       cardFront.style.transform = 'rotateY(0deg)';
       cardFront.style.backgroundImage = image;
       // card.classList.add("CardActive");
-      if (oneVisible === false) {
+      if (FIRS_CARD_UP === false) {
         //first card
-        oneVisible = true;
+        FIRS_CARD_UP = true;
         visible_nr = key;
         LOCK = false;
       } else {
@@ -59,17 +57,16 @@ class Game extends Component {
           }, 1200);
         }
 
-        ROUND++;
-        let updatedRound = ROUND;
+        TURN++;
+        let updatedRound = TURN;
 
-        this.setState({ round: updatedRound });
-        oneVisible = false;
+        this.setState({ turn: updatedRound });
+        FIRS_CARD_UP = false;
       }
     }
   };
 
   hideCardsHandler = (c1, c2) => {
-    console.log("para");
     let card = document.querySelector(`#c${c1}`);
     let secondCard = document.querySelector(`#c${c2}`);
     card.style.transform = "translateY(-100vh) scale(1.7)";
@@ -134,8 +131,8 @@ class Game extends Component {
       .concat(CARDS)
       .sort((el1, el2) => Math.random() - Math.random());
     SCORE = 0;
-    ROUND = 1;
-    this.setState({ score: SCORE, round: ROUND, cards: DECK });
+    TURN = 1;
+    this.setState({ score: SCORE, turn: TURN, cards: DECK });
   };
 
   nextRoundHandler = () => {
@@ -144,11 +141,11 @@ class Game extends Component {
       .concat(CARDS)
       .sort((el1, el2) => Math.random() - Math.random());
     let updatedDeck = DECK;
-    ROUND++;
-    let updatedRound = ROUND;
+    TURN++;
+    let updatedRound = TURN;
     this.backToBoardHandler();
     console.log(DECK);
-    this.setState({ cards: updatedDeck, round: updatedRound, summary: false });
+    this.setState({ cards: updatedDeck, turn: updatedRound, summary: false });
   };
 
   showSummaryHandler = () => {
@@ -161,7 +158,7 @@ class Game extends Component {
         <Modal show={this.state.summary}>
           <ScoreSummary
             score={this.state.score}
-            round={this.state.round}
+            turn={this.state.turn}
             click={this.nextRoundHandler}
           />
         </Modal>
@@ -170,7 +167,7 @@ class Game extends Component {
           <ScorePanel
             score={this.state.score}
             click={this.newGameHandler}
-            round={this.state.round}
+            turn={this.state.turn}
           />
         </div>
       </Aux>
