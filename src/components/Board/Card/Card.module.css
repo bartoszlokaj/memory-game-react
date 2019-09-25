@@ -43,7 +43,7 @@
   color: #333;
   box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.7);
 
-  background-image: url('../../assets/img/star.png');
+  background-image: url('../../../assets/img/star.png');
   background-repeat: repeat;
   background-position: center;
   background-size: 2.5rem;
