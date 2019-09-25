@@ -17,6 +17,7 @@
     position: fixed;
     top: 6rem;
     right: 6rem;
+    z-index: 20;
 
     display: flex;
     justify-content: center;
@@ -24,9 +25,25 @@
 
     width: 7rem;
     height: 7rem;
-    
+
     border-radius: 50%;
     background: #333;
+    opacity: .6;
+    box-shadow: 0 0 5px #000;
     font-size: 4rem;
-    text-align: center;
 }
+
+@media (orientation: landscape) {
+    .Round {
+      top: 4rem;
+      right: 2rem;
+    }
+  }
+
+  @media (max-height: 320px) and (orientation: landscape) {
+    .Round {
+      width: 5rem;
+      height: 5rem;
+      font-size: 3rem;
+    }
+  }
