@@ -72,6 +72,15 @@
   .Card,
   .CardSide {
     /* 1rem = 6px */
+    width: 12rem;
+    height: 16rem;
+  }
+}
+
+@media (max-width: 20em) { 
+  .Card,
+  .CardSide {
+    /* 1rem = 6px */
     width: 10rem;
     height: 14rem;
   }

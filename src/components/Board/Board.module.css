@@ -12,3 +12,15 @@
 
     position: relative;
 }
+
+@media (max-height: 411px) and (orientation: landscape) {
+    .Board {
+      max-width: 780px;
+    }
+  }
+
+@media (max-height: 375px) and (orientation: landscape) {
+    .Board {
+      max-width: 590px;
+    }
+  }
