@@ -30,15 +30,12 @@ class Card extends Component {
       <div className={classes.Card} id={this.props.id} onClick={this.props.click} style={
         this.state.animate ? STYLE : null
       }>
-        {/* <CardFront
+        <CardFront
           type={this.props.type}
           click={this.rotateToBackHandler}
           rotatedFront={this.state.rotatedFront}
         />
-        <CardBack
-          click={this.rotateToFrontHandler}
-          rotatedFront={this.state.rotatedFront}
-        /> */}
+        <CardBack />
       </div>
     );
   }

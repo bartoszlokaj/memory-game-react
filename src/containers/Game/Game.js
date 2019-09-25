@@ -34,9 +34,14 @@ class Game extends Component {
 
       let image = `url("./img/${type}.png")`;
       let card = document.querySelector(`#c${key}`);
+      let cardBack = document.querySelector(`#c${key} div:nth-child(2)`);
+      let cardFront = document.querySelector(`#c${key} div:first-child`);
+      console.log(cardBack, cardFront, card);
 
-      card.style.backgroundImage = image;
-      card.classList.add("CardActive");
+      cardBack.style.transform = 'rotateY(-180deg)';
+      cardFront.style.transform = 'rotateY(0deg)';
+      cardFront.style.backgroundImage = image;
+      // card.classList.add("CardActive");
       if (oneVisible === false) {
         //first card
         oneVisible = true;
@@ -83,23 +88,44 @@ class Game extends Component {
 
   backToBackHandler = (c1, c2) => {
     console.log("pudło");
-    let card = document.querySelector(`#c${c1}`);
-    let secondCard = document.querySelector(`#c${c2}`);
-    card.style.backgroundImage = "url(./img/star.png)";
-    secondCard.style.backgroundImage = "url(./img/star.png)";
+    let firstCardBack = document.querySelector(`#c${c1} div:nth-child(2)`);
+    let secondCardBack = document.querySelector(`#c${c2} div:nth-child(2)`);
+    let firstCardFront = document.querySelector(`#c${c1} div:first-child`);
+    let secondCardFront = document.querySelector(`#c${c2} div:first-child`);
+    // card.style.backgroundImage = "url(./img/star.png)";
+    // secondCard.style.backgroundImage = "url(./img/star.png)";
+    firstCardFront.style.transform = 'rotateY(-180deg)';
+    secondCardFront.style.transform = 'rotateY(-180deg)';
+    firstCardBack.style.transform = 'rotateY(0deg)';
+    secondCardBack.style.transform = 'rotateY(0deg)';
 
     LOCK = false;
   };
 
   backToBoardHandler = () => {
-    let cards = document.querySelectorAll('div[class*="Card"]');
+    let cards = document.querySelectorAll('div[id*="c"]');
     let cardsAr = Array.from(cards);
-    cardsAr.forEach(div => {
-      div.style.opacity = "1";
-      div.style.transform = "translateY(0) scale(1)";
-      div.style.backgroundImage = "url(./img/star.png)";
-    })
-    console.log(cardsAr);
+
+    let backs = document.querySelectorAll('div[class*="Back"]');
+    let backsAr = Array.from(backs);
+
+    let fronts = document.querySelectorAll('div[class*="Front"]');
+    let frontsAr = Array.from(fronts);
+    console.log(backsAr, frontsAr)
+
+    cardsAr.forEach(card => {
+      card.style.opacity = "1";
+      card.style.transform = "translateY(0) scale(1)";
+      // div.style.backgroundImage = "url(./img/star.png)";
+    });
+
+    frontsAr.forEach(front => {
+      front.style.transform = 'rotateY(-180deg)';
+    });
+
+    backsAr.forEach(back => {
+      back.style.transform = 'rotateY(0deg)';
+    });
   }
 
   newGameHandler = () => {
