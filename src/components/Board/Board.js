@@ -9,7 +9,8 @@ const board = props => {
   const transformedCards = cards.map((el, index) => {
     return (
       <Card
-        key={index}
+        key={'c' + index}
+        id={'c' + index}
         type={el}
         click={() => props.cardClick(el, index)}
         newGame={props.newGame}

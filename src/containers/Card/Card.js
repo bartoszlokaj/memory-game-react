@@ -18,19 +18,19 @@ class Card extends Component {
 
 
   rotateToFrontHandler = () => {
-    this.setState({ rotatedFront: true });
+    // this.setState({ rotatedFront: true });
   };
 
   rotateToBackHandler = () => {
-    this.setState({ rotatedFront: false });
+    // this.setState({ rotatedFront: false });
   };
 
   render() {
     return (
-      <div className={classes.Card} onClick={this.props.click} style={
+      <div className={classes.Card} id={this.props.id} onClick={this.props.click} style={
         this.state.animate ? STYLE : null
       }>
-        <CardFront
+        {/* <CardFront
           type={this.props.type}
           click={this.rotateToBackHandler}
           rotatedFront={this.state.rotatedFront}
@@ -38,7 +38,7 @@ class Card extends Component {
         <CardBack
           click={this.rotateToFrontHandler}
           rotatedFront={this.state.rotatedFront}
-        />
+        /> */}
       </div>
     );
   }

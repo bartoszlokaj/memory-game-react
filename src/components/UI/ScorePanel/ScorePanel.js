@@ -9,6 +9,7 @@ const scorePanel = (props) => {
             <span>Score: {props.score}</span>
             <Button type={'NewGame'} content={'New Game'} click={props.click}/>
             <span>Time Left: 1:00</span>
+            <div className={classes.Round}>{props.round}</div>
         </div>
     )
 };
