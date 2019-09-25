@@ -30,3 +30,9 @@ p {
     left: calc(50% - 250px);
   }
 }
+
+@media (orientation: landscape) {
+  .Modal {
+    top: 20%;
+  }
+}
